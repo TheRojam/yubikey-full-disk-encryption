@@ -17,7 +17,8 @@ There is similar project targeting [Debian](https://www.debian.org/)/[Ubuntu](ht
       * [Automatic mode with stored challenge (1FA)](#automatic-mode-with-stored-challenge-1fa)
       * [Manual mode with secret challenge (2FA)](#manual-mode-with-secret-challenge-2fa)
    * [Install](#install)
-      * [Create and install package through pacman (recommended)](#create-and-install-package-through-pacman-recommended)
+      * [Installation from AUR](#nstallation-from-aur)
+      * [Create and install package through pacman](#create-and-install-package-through-pacman-recommended)
       * [Download and install manually](#download-and-install-manually)
    * [Configure](#configure)
       * [Configure HMAC-SHA1 Challenge-Response slot in YubiKey](#configure-hmac-sha1-challenge-response-slot-in-yubikey)
@@ -89,16 +90,23 @@ tar xf yubikey-full-disk-encryption-git.tar.gz
 makepkg -i
 ```
 
-## Manual installation from github
+## Create and install package through pacman (recommended)
 
-### Create and install package through pacman (recommended)
+This Installation requires the PKGBUILD from github.
 
 ```
 wget https://raw.githubusercontent.com/agherzan/yubikey-full-disk-encryption/master/PKGBUILD
 makepkg -srci
 ```
 
-### Download and install manually
+## Download and install manually
+
+```
+git clone https://github.com/agherzan/yubikey-full-disk-encryption.git
+sudo make install
+```
+
+When doing manual installation you also need to install [yubikey-personalization](https://www.archlinux.org/packages/community/x86_64/yubikey-personalization/) and [expect](https://www.archlinux.org/packages/extra/x86_64/expect/) packages.
 
 ```
 git clone https://github.com/agherzan/yubikey-full-disk-encryption.git
